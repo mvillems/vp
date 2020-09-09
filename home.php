@@ -12,6 +12,17 @@
   if($hournow < 18){
 	  $partofday = "puhkuse aeg";
   }
+  
+  //vaatame semestri kulgemist
+  $semesterstart = new DateTime("2020-8-31");
+  $semesterend = new DateTime("2020-12-13");
+  //selgitame välja nende vahe ehk erinevus
+  $semesterduration = $semesterstart->diff($semesterend);
+  //leiame selle päevade arvuna
+  $semesterdurationdays = $semesterduration->format("%r%a");
+  //tänase päev
+  $today = new DateTime("now");
+  //if($fromsemesterstartdays < 0){semester pole alanud}
  ?>
  
 <!DOCTYPE html>
